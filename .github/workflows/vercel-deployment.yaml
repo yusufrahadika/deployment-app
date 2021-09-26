@@ -1,8 +1,8 @@
-name: Test React Application
+name: Vercel Deployment
 on:
   push:
     branches: [master]
-  pull_request:
+  pull_request_target:
     branches: [master]
 
 jobs:
@@ -31,7 +31,7 @@ jobs:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          alias-domains: pr-{{PR_NUMBER}}.deployment-app-seven.vercel.app
+          alias-domains: preview-{{PR_NUMBER}}.deployment-app-seven.vercel.app
 
   deploy_to_prod:
     needs: test
