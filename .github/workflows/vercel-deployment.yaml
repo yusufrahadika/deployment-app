@@ -16,6 +16,7 @@ jobs:
           node-version: 14.x
       - name: npm ci, build and test
         run: |
+          npm install
           npm test --passWithNoTests
 
   deploy_preview:
